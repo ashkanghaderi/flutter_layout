@@ -1,0 +1,78 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run --machine --start-paused -d 00008110-001E3D143EE3801E --devtools-server-address http://127.0.0.1:9100/ --target /Users/ashkan/Documents/MyFlutterProjects/my_layout_widgets_app/lib/main.dart
+
+## exception
+
+SocketException: SocketException: Send failed (OS Error: No route to host, errno = 65), address = 0.0.0.0, port = 5353
+
+```
+#0      _NativeSocket.send (dart:io-patch/socket_patch.dart:1275:34)
+#1      _RawDatagramSocket.send (dart:io-patch/socket_patch.dart:2590:15)
+#2      MDnsClient.lookup (package:multicast_dns/multicast_dns.dart:219:22)
+#3      MDnsVmServiceDiscovery._pollingVmService (package:flutter_tools/src/mdns_discovery.dart:236:36)
+<asynchronous suspension>
+#4      MDnsVmServiceDiscovery.firstMatchingVmService (package:flutter_tools/src/mdns_discovery.dart:189:56)
+<asynchronous suspension>
+#5      MDnsVmServiceDiscovery.getVMServiceUriForLaunch (package:flutter_tools/src/mdns_discovery.dart:452:50)
+<asynchronous suspension>
+#6      Future.any.onValue (dart:async/future.dart:614:5)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 3.27.1, on macOS 15.1 24B83 darwin-arm64, locale en-IR)
+    • Flutter version 3.27.1 on channel stable at /Users/ashkan/development/flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision 17025dd882 (3 weeks ago), 2024-12-17 03:23:09 +0900
+    • Engine revision cb4b5fff73
+    • Dart version 3.6.0
+    • DevTools version 2.40.2
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 30.0.3)
+    • Android SDK at /Users/ashkan/Library/Android/sdk
+    • Platform android-30, build-tools 30.0.3
+    • Java binary at: /Applications/Android Studio.app/Contents/jbr/Contents/Home/bin/java
+    • Java version OpenJDK Runtime Environment (build 21.0.3+-79915917-b509.11)
+    • All Android licenses accepted.
+
+[✓] Xcode - develop for iOS and macOS (Xcode 16.1)
+    • Xcode at /Applications/Xcode.app/Contents/Developer
+    • Build 16B40
+    • CocoaPods version 1.15.2
+
+[✓] Chrome - develop for the web
+    • Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
+[✓] Android Studio (version 2024.2)
+    • Android Studio at /Applications/Android Studio.app/Contents
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    • Java version OpenJDK Runtime Environment (build 21.0.3+-79915917-b509.11)
+
+[✓] VS Code (version 1.96.2)
+    • VS Code at /Applications/Visual Studio Code.app/Contents
+    • Flutter extension version 3.102.0
+
+[✓] Connected device (4 available)
+    • Ashkan Ghaderi’s iPhone (mobile) • 00008110-001E3D143EE3801E • ios            • iOS 18.1.1 22B91
+    • macOS (desktop)                  • macos                     • darwin-arm64   • macOS 15.1 24B83 darwin-arm64
+    • Mac Designed for iPad (desktop)  • mac-designed-for-ipad     • darwin         • macOS 15.1 24B83 darwin-arm64
+    • Chrome (web)                     • chrome                    • web-javascript • Google Chrome 131.0.6778.205
+    ! Error: Browsing on the local area network for iPhone. Ensure the device is unlocked and attached with a cable or associated with the same local area network as this Mac.
+      The device must be opted into Developer Mode to connect wirelessly. (code -27)
+    ! Error: Browsing on the local area network for iPhone (55). Ensure the device is unlocked and attached with a cable or associated with the same local area network as this Mac.
+      The device must be opted into Developer Mode to connect wirelessly. (code -27)
+
+[✓] Network resources
+    • All expected network resources are available.
+
+• No issues found!
+```
